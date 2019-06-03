@@ -12,9 +12,17 @@
 	<h1>Home Pages</h1>
 
 	<h:form>
-		<h:inputText id="nome" value="#{pessoaBean.nome}"/><br/>
-		<h:outputLabel value="Teste JSF"/><br/>
-		<h:commandButton value="Olá, Mundo!"/>
+	
+		<h:inputText id="nome" value="#{pessoaBean.nome}"/>
+		<br/>
+		
+		<h:inputText id="sobrenome" value="#{pessoaBean.sobrenome}"></h:inputText>
+		<br/>
+		
+		<h:outputText value="#{pessoaBean.nomeCompleto}"/>
+		<br/>
+		
+		<h:commandButton value="Botão" action="#{pessoaBean.mostrarNomeCompleto}"/>
 
 	</h:form>
 	
