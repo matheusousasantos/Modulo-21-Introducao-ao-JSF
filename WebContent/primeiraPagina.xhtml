@@ -14,15 +14,14 @@
 	<h:form>
 	
 		<h:inputText id="nome" value="#{pessoaBean.nome}"/>
-		<br/>
 		
-		<h:inputText id="sobrenome" value="#{pessoaBean.sobrenome}"></h:inputText>
-		<br/>
+		<h:commandButton value="Adicionar Nome" action="#{pessoaBean.addNome}"/>
 		
-		<h:outputText value="#{pessoaBean.nomeCompleto}"/>
-		<br/>
-		
-		<h:commandButton value="Botão" action="#{pessoaBean.mostrarNomeCompleto}"/>
+		<h:dataTable value="#{pessoaBean.nomes}" var="nome">
+				<h:column>
+					<h:outputText value="#{nome}"/>
+				</h:column>
+		</h:dataTable>
 
 	</h:form>
 	
