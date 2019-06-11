@@ -4,12 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
 import javax.faces.component.html.HtmlCommandButton;
 
+@ManagedBean( name = "pessoaBean" )
 public class PessoaBean {
 	
 	private String nome;
+	
+	private String senha;
+	
+	private String texto;
 	
 	private HtmlCommandButton commandButton;
 	
@@ -48,6 +52,22 @@ public class PessoaBean {
 
 	public void setCommandButton(HtmlCommandButton commandButton) {
 		this.commandButton = commandButton;
+	}
+	
+	public String getSenha() {
+		return senha;
+	}
+	
+	public void setSenha(String senha) {
+		this.nome = senha;
+	}
+	
+	public String getTexto() {
+		return texto;
+	}
+	
+	public void setTexto(String texto) {
+		this.nome = texto;
 	}
 	
 }
