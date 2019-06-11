@@ -9,26 +9,16 @@
 
 <h:body>
 
-	<h1>Home Pages</h1>
+	
 
 	<h:form>
-	
-		<h:inputText id="nome" value="#{pessoaBean.nome}"/>
 		
-		<h:inputSecret id="senha" value="#{pessoaBean.senha}"/>
+		<h1>Home Pages</h1>
 		
-		<h:inputTextarea id="texto" value="#{pessoaBean.texto}"/>
+		<h:outputText value="Saída de texto"/><br/>
+		<h:outputLabel value="Nome:" for="nome"/>
+		<h:inputText id="nome"/>
 		
-		
-		<h:commandButton binding="#{pessoaBean.commandButton}" 
-		value="Adicionar Nome" action="#{pessoaBean.addNome}"/>
-		
-		<h:dataTable value="#{pessoaBean.nomes}" var="nome">
-				<h:column>
-					<h:outputText value="#{nome}"/>
-				</h:column>
-		</h:dataTable>
-
 	</h:form>
 	
 </h:body>
