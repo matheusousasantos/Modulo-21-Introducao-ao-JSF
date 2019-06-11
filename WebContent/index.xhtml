@@ -23,7 +23,7 @@
 	<h:form id="formPessoa">
 	<h1>Olá, Mundo</h1>
 	
-	<h:inputText id="nome"/>
+	<h:inputText id="nome" onclick="this.value='Nome'" onchange="this.value = this.value.toUpperCase();"/>
 	<h:commandButton value="Criar" onclick="alterarValorDoCampo();"/><br/>
 
 	<h:commandButton value="Navegar" action="primeiraPagina"/>
