@@ -8,7 +8,7 @@
 		
 		<properties>
 			<!-- URL do banco de dados -->
-			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/mMeuPrimeiroProjetoJSF"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/MeuPrimeiroProjetoJSF"/>
 			
 			<!-- Login e Senha -->
 			<property name="javax.persistence.jdbc.user" value="postgres"/>
@@ -18,7 +18,7 @@
 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
 			
 			<!-- Dialeto -->
-			<property name="hibernate.dialect" value="org.dialect.PostgresSQLDialect"/>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
 			
 			<!-- Mostrar SQL no Console -->
 			<property name="hibernate.show_sql" value="true"/>
