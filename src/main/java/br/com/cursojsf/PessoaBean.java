@@ -30,6 +30,12 @@ public class PessoaBean {
 		return "";
 	}
 	
+	public String clicou() {
+		
+		return "";
+		
+	}
+	
 	public String getNome() {
 		return nome;
 	}
