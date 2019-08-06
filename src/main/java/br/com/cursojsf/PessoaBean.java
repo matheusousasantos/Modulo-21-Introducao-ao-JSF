@@ -6,8 +6,8 @@ import javax.faces.bean.ViewScoped;
 import br.com.dao.DaoGeneric;
 import br.com.entidades.Pessoa;
 
-@ManagedBean( name = "pessoaBean" )
 @ViewScoped
+@ManagedBean( name = "pessoaBean" )
 public class PessoaBean {
 	
 	private Pessoa pessoa = new Pessoa();
