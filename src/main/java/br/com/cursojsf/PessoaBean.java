@@ -14,7 +14,11 @@ public class PessoaBean {
 	private DaoGeneric<Pessoa> dao = new DaoGeneric<Pessoa>();
 	
 	public String salvar() {
-		dao.salvar(pessoa);
+		pessoa = dao.merge(pessoa);
+		return "";
+	}
+	
+	public String novo() {
 		pessoa = new Pessoa();
 		return "";
 	}
