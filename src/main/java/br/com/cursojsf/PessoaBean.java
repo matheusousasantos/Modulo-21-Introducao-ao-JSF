@@ -1,79 +1,36 @@
 package br.com.cursojsf;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.faces.bean.ManagedBean;
-import javax.faces.component.html.HtmlCommandButton;
+import javax.faces.bean.ViewScoped;
+
+import br.com.dao.DaoGeneric;
+import br.com.entidades.Pessoa;
 
 @ManagedBean( name = "pessoaBean" )
+@ViewScoped
 public class PessoaBean {
 	
-	private String nome;
+	private Pessoa pessoa = new Pessoa();
+	private DaoGeneric<Pessoa> dao = new DaoGeneric<Pessoa>();
 	
-	private String senha;
-	
-	private String texto;
-	
-	private HtmlCommandButton commandButton;
-	
-	private List<String> nomes = new ArrayList<String>();
-	
-	public String addNome() {
-		nomes.add(nome);
-		
-		if(nomes.size() > 3) {
-			commandButton.setDisabled(true);
-			return "paginaNavegada?faces-redirect=true";
-		}
-		
+	public String salvar() {
+		dao.salvar(pessoa);
 		return "";
 	}
-	
-	public String clicou() {
-		
-		return "";
-		
-	}
-	
-	public String getNome() {
-		return nome;
-	}
-	
-	public void setNome(String nome) {
-		this.nome = nome;
+
+	public Pessoa getPessoa() {
+		return pessoa;
 	}
 
-	public List<String> getNomes() {
-		return nomes;
+	public void setPessoa(Pessoa pessoa) {
+		this.pessoa = pessoa;
 	}
 
-	public void setNomes(List<String> nomes) {
-		this.nomes = nomes;
+	public DaoGeneric<Pessoa> getDao() {
+		return dao;
 	}
 
-	public HtmlCommandButton getCommandButton() {
-		return commandButton;
+	public void setDao(DaoGeneric<Pessoa> dao) {
+		this.dao = dao;
 	}
-
-	public void setCommandButton(HtmlCommandButton commandButton) {
-		this.commandButton = commandButton;
-	}
-	
-	public String getSenha() {
-		return senha;
-	}
-	
-	public void setSenha(String senha) {
-		this.nome = senha;
-	}
-	
-	public String getTexto() {
-		return texto;
-	}
-	
-	public void setTexto(String texto) {
-		this.nome = texto;
-	}
-	
 }

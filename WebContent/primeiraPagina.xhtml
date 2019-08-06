@@ -4,20 +4,26 @@
 	  xmlns:h="http://java.sun.com/jsf/html">      
 
 <h:head>
-    <title>Olá jsf</title>
+    <title>HOME</title>
 </h:head>
 
 <h:body>
 
+	<h:form id="formPessoa">
 	
-
-	<h:form>
+		<h:outputLabel value="Nome: "/>
+		<h:inputText value="#{pessoaBean.pessoa.nome}"/>
 		
-		<h1>Home Pages</h1>
+		<br/>
+		<h:outputLabel value="Sobrenome: "/>
+		<h:inputText value="#{pessoaBean.pessoa.sobrenome}"/>
 		
-		<h:outputText value="Saída de texto"/><br/>
-		<h:outputLabel value="Nome:" for="nome"/>
-		<h:inputText id="nome"/>
+		<br/>
+		<h:outputLabel value="Idade: "/>
+		<h:inputText value="#{pessoaBean.pessoa.idade}"/>
+		
+		<br/>
+		<h:commandButton value="Salvar" action="#{pessoaBean.salvar}"/>
 		
 	</h:form>
 	
