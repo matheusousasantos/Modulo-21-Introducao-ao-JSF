@@ -22,6 +22,12 @@ public class PessoaBean {
 		pessoa = new Pessoa();
 		return "";
 	}
+	
+	public String remover() {
+		dao.deletePorId(pessoa);
+		pessoa = new Pessoa();
+		return "";
+	}
 
 	public Pessoa getPessoa() {
 		return pessoa;
