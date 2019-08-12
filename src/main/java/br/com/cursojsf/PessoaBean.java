@@ -1,5 +1,9 @@
 package br.com.cursojsf;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
@@ -12,9 +16,12 @@ public class PessoaBean {
 	
 	private Pessoa pessoa = new Pessoa();
 	private DaoGeneric<Pessoa> dao = new DaoGeneric<Pessoa>();
+	private List<Pessoa> pessoas = new ArrayList<Pessoa>();
 	
 	public String salvar() {
 		pessoa = dao.merge(pessoa);
+		
+		this.carregarPessoas();
 		return "";
 	}
 	
@@ -26,7 +33,15 @@ public class PessoaBean {
 	public String remover() {
 		dao.deletePorId(pessoa);
 		pessoa = new Pessoa();
+		
+		this.carregarPessoas();
 		return "";
+	}
+	
+	
+	@PostConstruct
+	public void carregarPessoas() {
+		pessoas = dao.getListEntity(Pessoa.class);
 	}
 
 	public Pessoa getPessoa() {
@@ -37,11 +52,11 @@ public class PessoaBean {
 		this.pessoa = pessoa;
 	}
 
-	public DaoGeneric<Pessoa> getDao() {
-		return dao;
+	public List<Pessoa> getPessoas() {
+		return pessoas;
 	}
 
-	public void setDao(DaoGeneric<Pessoa> dao) {
-		this.dao = dao;
+	public void setPessoas(List<Pessoa> pessoas) {
+		this.pessoas = pessoas;
 	}
 }
