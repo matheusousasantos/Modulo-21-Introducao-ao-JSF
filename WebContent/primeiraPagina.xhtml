@@ -42,32 +42,45 @@
 			
 		</h:panelGrid>
 		
-		<h:dataTable value="#{pessoaBean.pessoas}" var="pessoa">
+		<h:dataTable value="#{pessoaBean.pessoas}" var="pessoa" border="2" cellpadding="6">
+		
+			<f:facet name="header">
+				Lista de Pessoas Cadastradas
+			</f:facet>
 		
 			<h:column>
+				<f:facet name="header">ID</f:facet>
 				<h:outputText value="#{pessoa.id}"/>
 			</h:column>
 			
 			<h:column>
+				<f:facet name="header">Nome</f:facet>
 				<h:outputText value="#{pessoa.nome}"/>
 			</h:column>
 			
 			<h:column>
+				<f:facet name="header">Sobrenome</f:facet>
 				<h:outputText value="#{pessoa.sobrenome}"/>
 			</h:column>
 			
 			<h:column>
+				<f:facet name="header">Editar</f:facet>
+				
 				<h:commandLink value="Editar">
 					<f:setPropertyActionListener value="#{pessoa}" target="#{pessoaBean.pessoa}"/>
 				</h:commandLink>
+				
 			</h:column>
+			
 			
 			<h:column>
-				<h:commandLink value="Remover" action="#{pessoaBean.remover}">
+				<f:facet name="header">Excluir</f:facet>
+				
+				<h:commandLink value=" Remover" action="#{pessoaBean.remover}">
 					<f:setPropertyActionListener value="#{pessoa}" target="#{pessoaBean.pessoa}"/>
 				</h:commandLink>
+				
 			</h:column>
-			
 		</h:dataTable>
 		
 	</h:form>
