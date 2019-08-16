@@ -10,8 +10,9 @@ import javax.faces.bean.ViewScoped;
 import br.com.dao.DaoGeneric;
 import br.com.entidades.Pessoa;
 
-@ViewScoped
+
 @ManagedBean( name = "pessoaBean" )
+@ViewScoped
 public class PessoaBean {
 	
 	private Pessoa pessoa = new Pessoa();
