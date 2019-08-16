@@ -17,31 +17,43 @@
 		
 		<h:panelGrid columns="2">
 		
-		<f:facet name="header">
-			<h:outputText value="Cadastro Pessoa"/>
-		</f:facet>
-			
-			<h:outputLabel value="ID: "/>
-			<h:inputText value="#{pessoaBean.pessoa.id}" readonly="true"/>
-			
-			<h:outputLabel value="Nome: "/>
-			<h:inputText value="#{pessoaBean.pessoa.nome}"/>
-			
-			<h:outputLabel value="Sobrenome: "/>
-			<h:inputText value="#{pessoaBean.pessoa.sobrenome}"/>
-			
-			<h:outputLabel value="Idade: "/>
-			<h:inputText value="#{pessoaBean.pessoa.idade}"/>
-			
-			<h:outputLabel value="Sexo: "/>
-			
-			<h:selectOneMenu id="campoSexo" value="#{pessoaBean.pessoa.sexo}" required="true">
-				<f:selectItem itemValue="Não Informado" itemLabel="[-Selecione-]" noSelectionOption="true"/>
-				<f:selectItem itemValue="M" itemLabel="Sexo Masculino"/>
-				<f:selectItem itemValue="F" itemLabel="Sexo Feminino"/>
-			</h:selectOneMenu>
-			
-			<h:outputLabel value=""/>
+			<f:facet name="header">
+				<h:outputText value="Cadastro Pessoa"/>
+			</f:facet>
+				
+				<h:outputLabel value="ID: "/>
+				<h:inputText value="#{pessoaBean.pessoa.id}" readonly="true"/>
+				
+				<h:outputLabel value="Nome: "/>
+				<h:inputText value="#{pessoaBean.pessoa.nome}"/>
+				
+				<h:outputLabel value="Sobrenome: "/>
+				<h:inputText value="#{pessoaBean.pessoa.sobrenome}"/>
+				
+				<h:outputLabel value="Idade: "/>
+				<h:inputText value="#{pessoaBean.pessoa.idade}"/>
+				
+				<h:outputLabel value="Sexo: "/>
+				
+				<h:selectOneMenu id="campoSexo" value="#{ pessoaBean.pessoa.sexo }" required="true">
+					<f:selectItem itemValue="Não Informado" itemLabel="[-Selecione-]" noSelectionOption="true"/>
+					<f:selectItem itemValue="M" itemLabel="Sexo Masculino"/>
+					<f:selectItem itemValue="F" itemLabel="Sexo Feminino"/>
+				</h:selectOneMenu>
+				
+				<h:outputLabel value="Frameworks: "  />
+				
+				<h:selectManyMenu id="campo-frameworks" 
+					value="#{ pessoaBean.pessoa.frameworks }" style="height: 150px">
+					
+					<f:selectItem itemValue="Hibernate"/>
+					<f:selectItem itemValue="Spring MVC"/>
+					<f:selectItem itemValue="JPA"/>
+					<f:selectItem itemValue="PrimeFaces"/>
+					<f:selectItem itemValue="JSF"/>
+					<h:outputLabel value=""/>
+					
+				</h:selectManyMenu>
 			
 			<h:panelGroup>
 		
