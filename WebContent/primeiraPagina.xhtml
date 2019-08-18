@@ -54,6 +54,10 @@
 					<h:outputLabel value=""/>
 					
 				</h:selectManyMenu>
+				
+				
+			<h:outputText value="Ativo:"/>	
+			<h:selectBooleanCheckbox value="#{ pessoaBean.pessoa.ativo }"/>
 			
 			<h:panelGroup>
 		
@@ -61,7 +65,7 @@
 				<h:commandButton value="Novo" action="#{pessoaBean.novo}"/>
 				<h:commandButton value="Remover" action="#{pessoaBean.remover}"/>
 	
-			</h:panelGroup>		
+			</h:panelGroup>	
 			
 		</h:panelGrid>
 		
