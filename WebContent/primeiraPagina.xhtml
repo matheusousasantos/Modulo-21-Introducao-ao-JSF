@@ -61,8 +61,8 @@
 			
 			<h:panelGroup>
 		
-				<h:commandButton value="Salvar" action="#{pessoaBean.salvar}"/>
-				<h:commandButton value="Novo" action="#{pessoaBean.novo}"/>
+				<h:commandButton value="Salvar" action="#{pessoaBean.salvar}" title="Novo" image="resources/img/new_add_user_16734.png"/>
+				<h:commandButton value="Novo" action="#{pessoaBean.novo}" title="Salvar" image="resources/img/Save_37110.png"/> 
 				<h:commandButton value="Remover" action="#{pessoaBean.remover}"/>
 				<h:commandButton value="Limpar" type="reset"/>
 	
@@ -94,8 +94,9 @@
 			<h:column>
 				<f:facet name="header">Editar</f:facet>
 				
-				<h:commandLink value="Editar">
+				<h:commandLink>
 					<f:setPropertyActionListener value="#{pessoa}" target="#{pessoaBean.pessoa}"/>
+					<h:graphicImage value="resources/img/editnote_pencil_edi_6175.png"/>
 				</h:commandLink>
 				
 			</h:column>
@@ -104,8 +105,9 @@
 			<h:column>
 				<f:facet name="header">Excluir</f:facet>
 				
-				<h:commandLink value=" Remover" action="#{pessoaBean.remover}">
+				<h:commandLink action="#{pessoaBean.remover}" title="Excluir">
 					<f:setPropertyActionListener value="#{pessoa}" target="#{pessoaBean.pessoa}"/>
+					<h:graphicImage value="resources/img/excluir.png"/>
 				</h:commandLink>
 				
 			</h:column>
