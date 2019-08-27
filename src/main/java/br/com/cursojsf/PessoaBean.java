@@ -44,6 +44,7 @@ public class PessoaBean {
 	public void carregarPessoas() {
 		pessoas = dao.getListEntity(Pessoa.class);
 	}
+	
 
 	public Pessoa getPessoa() {
 		return pessoa;
