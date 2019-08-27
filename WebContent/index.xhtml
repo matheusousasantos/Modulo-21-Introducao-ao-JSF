@@ -4,31 +4,15 @@
 	  xmlns:h="http://java.sun.com/jsf/html">      
 
 <h:head>
-    <title>Olá jsf</title>
-    
-    <script>
-    	
-    	function alterarValorDoCampo() {
-    		
-    		var campo = document.getElementById('formPessoa:nome');
-    		campo.value = 'Eu cliquei no campo!'
-    	}
-    	
-    </script>
-    
+    <title>Login</title> 
 </h:head>
 
 <h:body>
 
-	<h:form id="formPessoa">
-	<h1>Olá, Mundo</h1>
+	<h:form id="formLogin">
+	<h1>Realize o seu Login</h1>
 	
-	<h:inputText id="nome" onclick="this.value='Nome'" onchange="this.value = this.value.toUpperCase();"/>
-	<h:commandButton value="Criar" onclick="alterarValorDoCampo();"/><br/>
-
-	<h:commandButton value="Navegar" action="primeiraPagina"/>
 	
-	<h:commandButton value="Navegar Explícita" action="explicita"/>
 	</h:form>
 	
 </h:body>
