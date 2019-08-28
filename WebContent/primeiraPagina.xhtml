@@ -77,7 +77,7 @@
 		
 				<h:commandButton value="Salvar" action="#{pessoaBean.salvar}" title="Salvar" image="resources/img/Save_37110.png"/>
 				<h:commandButton value="Novo" action="#{pessoaBean.novo}" title="Novo" image="resources/img/new_add_user_16734.png"/> 
-				<h:commandButton value="Remover" action="#{pessoaBean.remover}"/>
+				<h:commandButton value="Remover" action="#{pessoaBean.remover}" rendered="#{pessoaBean.permiteAcesso('ADMINISTRADOR')}"/>
 				<h:commandButton value="Limpar" type="reset"/>
 	
 			</h:panelGroup>	
@@ -116,7 +116,7 @@
 			</h:column>
 			
 			
-			<h:column>
+			<h:column rendered="#{pessoaBean.permiteAcesso('ADMINISTRADOR')}">
 				<f:facet name="header">Excluir</f:facet>
 				
 				<h:commandLink action="#{pessoaBean.remover}" title="Excluir">
