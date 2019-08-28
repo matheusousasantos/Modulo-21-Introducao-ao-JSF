@@ -21,7 +21,7 @@ public class Lancamento implements Serializable {
 	
 	private String numeroNotaFiscal;
 	
-	private String Empresaorigem;
+	private String EmpresaOrigem;
 	
 	private String EmpresaDestino;
 	
@@ -45,12 +45,12 @@ public class Lancamento implements Serializable {
 		this.numeroNotaFiscal = numeroNotaFiscal;
 	}
 
-	public String getEmpresaorigem() {
-		return Empresaorigem;
+	public String getEmpresaOrigem() {
+		return EmpresaOrigem;
 	}
 
-	public void setEmpresaorigem(String empresaorigem) {
-		Empresaorigem = empresaorigem;
+	public void setEmpresaOrigem(String empresaOrigem) {
+		EmpresaOrigem = empresaOrigem;
 	}
 
 	public String getEmpresaDestino() {
