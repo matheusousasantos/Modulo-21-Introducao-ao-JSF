@@ -10,12 +10,20 @@
 
 <h:body>
 
+	<h:form>
+	
+		<h:commandLink value="Administração" action="lancamento" style="margin-left: 1cm;"/>
+		<h:commandLink value="Lançamentos" action="primeiraPagina" style="margin-left: 1cm;"/>
+		<h:commandLink value="Trocar Usuário" action="index" style="margin-left: 1cm;"/>
+		
+	</h:form>
+
 	<h:form id="formPessoa">
 	
 		<h:graphicImage height="250" width="300"
 		value="https://static.rfstat.com/renderforest/images/v2/landing-pics/logo_landing/ma5.png"/>
 		
-		<h:panelGrid columns="2">
+		<h:panelGrid columns="2" rendered="#{pessoaBean.permiteAcesso('ADMINISTRADOR')}">
 		
 			<f:facet name="header">
 				<h:outputText value="Cadastro Pessoa"/>
