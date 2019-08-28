@@ -33,7 +33,7 @@ public class FilterAutenticacao implements Filter {
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpSession session = req.getSession();
 		
-		Pessoa pessoaLogada = (Pessoa) session.getAttribute("pessoaLogado");
+		String pessoaLogada = (String) session.getAttribute("pessoaLogado");
 		
 		String url = req.getServletPath();
 		
