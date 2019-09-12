@@ -18,10 +18,8 @@
 		
 	</h:form>
 
-	<h:form id="formLancamento" style="margin-top: 16%; margin-left: 40%;">
-	
-		<h:form>
-		
+	<h:form id="formLancamento">
+
 			<h:panelGrid columns="2">
 			
 				<f:facet name="header">
@@ -86,10 +84,26 @@
 					<h:outputLabel value="#{ lanc.empresaDestino }"/>
 					
 				</h:column>
+				
+				<h:column>
+					
+					<f:facet name="header">Editar</f:facet>
+					<h:commandLink title="Editar">
+						<h:graphicImage value="/resources/img/editnote_pencil_edi_6175.png"/>
+						<f:setPropertyActionListener value="#{ lanc }" target="#{ lancamentoBean.lancamento }"/>
+					</h:commandLink>
+				</h:column>
+				
+				<h:column>
+					
+					<f:facet name="header">Excluir</f:facet>
+					<h:commandLink title="Excluir" action="#{ lancamentoBean.remover }">
+						<h:graphicImage value="/resources/img/excluir.png"/>
+						<f:setPropertyActionListener value="#{ lanc }" target="#{ lancamentoBean.lancamento }"/>
+					</h:commandLink>
+				</h:column>
 			
 			</h:dataTable>
-		
-		</h:form>
 	
 	</h:form>
 	

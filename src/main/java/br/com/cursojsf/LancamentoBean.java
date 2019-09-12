@@ -33,7 +33,9 @@ public class LancamentoBean {
 		
 		lancamento.setUsuario(p);
 		
-		daoGeneric.salvar(lancamento);
+		lancamento = daoGeneric.merge(lancamento);
+		
+		carregarLancamentos();
 		
 		return "";
 		
