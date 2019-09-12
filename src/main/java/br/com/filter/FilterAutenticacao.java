@@ -37,6 +37,8 @@ public class FilterAutenticacao implements Filter {
 		
 		String url = req.getServletPath();
 		
+//		Quando eu quero acessar uma página de dentro do sistema( que não seja o "index" )
+//		porém a pessoa não esta logada.
 		if(!url.equalsIgnoreCase("index.jsf") && pessoaLogada == null) {
 			
 			RequestDispatcher view = request.getRequestDispatcher("/index.jsf");
