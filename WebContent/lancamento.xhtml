@@ -54,6 +54,40 @@
 				</h:panelGroup>
 				
 			</h:panelGrid>
+			
+			<h:dataTable value="#{ lancamentoBean.lancamentos }" var="lanc" border="3"> 
+			
+				<f:facet name="header">Lista de Lançamentos</f:facet>
+				
+				<h:column>
+					
+					<f:facet name="header">ID</f:facet>
+					<h:outputLabel value="#{ lanc.id }"/>
+				
+				</h:column>
+				
+				<h:column>
+					
+					<f:facet name="header">Nota Fiscal</f:facet>
+					<h:outputLabel value="#{ lanc.numeroNotaFiscal }"/>
+					
+				</h:column>	
+				
+				<h:column>
+					
+					<f:facet name="header">Empresa de Origem</f:facet>
+					<h:outputLabel value="#{ lanc.empresaOrigem }"/>
+					
+				</h:column>
+					
+				<h:column>
+					
+					<f:facet name="header">Empresa de Destino</f:facet>
+					<h:outputLabel value="#{ lanc.empresaDestino }"/>
+					
+				</h:column>
+			
+			</h:dataTable>
 		
 		</h:form>
 	
