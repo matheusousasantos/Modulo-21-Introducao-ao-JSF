@@ -45,6 +45,8 @@ public class Pessoa implements Serializable {
 	private Boolean ativo;
 	
 	private String nivelProgramador;
+	
+	private Integer[] linguagens;
 		
 	public Long getId() {
 		return id;
@@ -144,6 +146,14 @@ public class Pessoa implements Serializable {
 
 	public void setNivelProgramador(String nivelProgramador) {
 		this.nivelProgramador = nivelProgramador;
+	}
+
+	public Integer[] getLinguagens() {
+		return linguagens;
+	}
+
+	public void setLinguagens(Integer[] linguagens) {
+		this.linguagens = linguagens;
 	}
 
 	@Override
