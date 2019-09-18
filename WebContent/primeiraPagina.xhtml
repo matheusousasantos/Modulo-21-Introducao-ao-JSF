@@ -2,7 +2,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
 
 <h:head>
 	<title>HOME</title>
@@ -10,24 +12,16 @@
 
 <h:body>
 
-	<h:form>
+	<ui:include src="/menu.xhtml" />
 
-		<h:commandLink value="Administração" action="primeiraPagina"
-			style="margin-left: 1cm;"
-			rendered="#{pessoaBean.permiteAcesso('ADMINISTRADOR')}" />
-		<h:commandLink value="Lançamentos" action="lancamento"
-			style="margin-left: 1cm;" />
-		<h:commandLink value="Trocar Usuário" action="index"
-			style="margin-left: 1cm;" />
 
-	</h:form>
-
-	<h:form id="formPessoa" rendered="#{pessoaBean.permiteAcesso('ADMINISTRADOR')}">
+	<h:form id="formPessoa"
+		rendered="#{pessoaBean.permiteAcesso('ADMINISTRADOR')}">
 
 		<h:graphicImage height="250" width="300"
 			value="https://static.rfstat.com/renderforest/images/v2/landing-pics/logo_landing/ma5.png" />
-			
-			<h:messages infoStyle="color: green"/>
+
+		<h:messages infoStyle="color: green" />
 
 		<h:panelGrid columns="2">
 
