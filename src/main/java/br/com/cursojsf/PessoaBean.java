@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.ExternalContext;
@@ -28,11 +29,13 @@ public class PessoaBean {
 	
 	public String salvar() {
 		pessoa = dao.merge(pessoa);
-		
 		this.carregarPessoas();
+		
+		mostrarMsg("Cadastrado com Sucesso!");
+		
 		return "";
 	}
-	
+
 	public String novo() {
 		pessoa = new Pessoa();
 		return "";
@@ -43,6 +46,9 @@ public class PessoaBean {
 		pessoa = new Pessoa();
 		
 		this.carregarPessoas();
+		
+		mostrarMsg("Removido com Sucesso!");
+		
 		return "";
 	}
 	
@@ -76,6 +82,13 @@ public class PessoaBean {
 	@PostConstruct
 	public void carregarPessoas() {
 		pessoas = dao.getListEntity(Pessoa.class);
+	}
+	
+	private void mostrarMsg(String msg) {
+		
+		FacesContext context = FacesContext.getCurrentInstance();
+		FacesMessage message = new FacesMessage(msg);
+		context.addMessage(null, message);
 	}
 	
 

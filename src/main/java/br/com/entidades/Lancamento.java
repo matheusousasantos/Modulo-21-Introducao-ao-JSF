@@ -2,6 +2,7 @@ package br.com.entidades;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,7 +26,7 @@ public class Lancamento implements Serializable {
 	
 	private String EmpresaDestino;
 	
-	@ManyToOne(optional=false)
+	@ManyToOne(optional=false, cascade = CascadeType.REMOVE)
 	@ForeignKey(name="usuario_fk")
 	private Pessoa usuario;
 

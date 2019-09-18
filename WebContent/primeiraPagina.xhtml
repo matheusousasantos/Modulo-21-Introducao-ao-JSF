@@ -22,13 +22,14 @@
 
 	</h:form>
 
-	<h:form id="formPessoa">
+	<h:form id="formPessoa" rendered="#{pessoaBean.permiteAcesso('ADMINISTRADOR')}">
 
 		<h:graphicImage height="250" width="300"
 			value="https://static.rfstat.com/renderforest/images/v2/landing-pics/logo_landing/ma5.png" />
+			
+			<h:messages infoStyle="color: green"/>
 
-		<h:panelGrid columns="2"
-			rendered="#{pessoaBean.permiteAcesso('ADMINISTRADOR')}">
+		<h:panelGrid columns="2">
 
 			<f:facet name="header">
 				<h:outputText value="Cadastro Pessoa" />
