@@ -44,6 +44,8 @@ public class Pessoa implements Serializable {
 	
 	private Boolean ativo;
 	
+	private String nivelProgramador;
+		
 	public Long getId() {
 		return id;
 	}
@@ -134,6 +136,14 @@ public class Pessoa implements Serializable {
 
 	public void setAtivo(Boolean ativo) {
 		this.ativo = ativo;
+	}
+	
+	public String getNivelProgramador() {
+		return nivelProgramador;
+	}
+
+	public void setNivelProgramador(String nivelProgramador) {
+		this.nivelProgramador = nivelProgramador;
 	}
 
 	@Override
