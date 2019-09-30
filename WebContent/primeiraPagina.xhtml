@@ -47,9 +47,14 @@
 				<f:selectItem itemValue="M" itemLabel="Sexo Masculino" />
 				<f:selectItem itemValue="F" itemLabel="Sexo Feminino" />
 			</h:selectOneMenu>
-
+			
+			<h:outputLabel value="Nascimento:"/>
+			<h:inputText value="#{ pessoaBean.pessoa.dataNascimento }">
+				<f:convertDateTime  pattern="dd/MM/yyyy" dateStyle="full" locale="pt_BR"/>
+			</h:inputText>
+			
+					
 			<h:outputLabel value="Frameworks: " />
-
 			<h:selectManyMenu id="campo-frameworks"
 				value="#{ pessoaBean.pessoa.frameworks }" style="height: 150px">
 
