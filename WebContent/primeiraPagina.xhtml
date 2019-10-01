@@ -15,7 +15,7 @@
 	<ui:include src="/menu.xhtml" />
 
 
-	<h:form id="formPessoa"
+	<h:form id="form"
 		rendered="#{pessoaBean.permiteAcesso('ADMINISTRADOR')}">
 
 		<h:graphicImage height="250" width="300"
@@ -33,11 +33,10 @@
 			<h:inputText value="#{pessoaBean.pessoa.id}" readonly="true" />
 
 			<h:outputLabel value="Nome: " />
-			<h:inputText value="#{pessoaBean.pessoa.nome}" 
-			required="true" requiredMessage="Informe o nome do Usuario!" validatorMessage="Nome no mínimo 10 letras">
-				
-				<f:validateLength minimum="10" maximum="50"/>
-			
+			<h:inputText value="#{pessoaBean.pessoa.nome}" required="true"
+				requiredMessage="Informe o nome do Usuario!"
+				validatorMessage="Nome no mínimo 10 letras">
+				<f:validateLength minimum="1" maximum="50" />
 			</h:inputText>
 
 			<h:outputLabel value="Sobrenome: " />
@@ -52,13 +51,15 @@
 				<f:selectItem itemValue="M" itemLabel="Sexo Masculino" />
 				<f:selectItem itemValue="F" itemLabel="Sexo Feminino" />
 			</h:selectOneMenu>
-			
-			<h:outputLabel value="Nascimento:"/>
-			<h:inputText value="#{ pessoaBean.pessoa.dataNascimento }" converterMessage="Data Errada">
-				<f:convertDateTime  pattern="dd/MM/yyyy" locale="pt_BR" timeZone="GMT-03:00"/>
+
+			<h:outputLabel value="Nascimento:" />
+			<h:inputText value="#{ pessoaBean.pessoa.dataNascimento }"
+				converterMessage="Data Errada">
+				<f:convertDateTime pattern="dd/MM/yyyy" locale="pt_BR"
+					timeZone="GMT-03:00" />
 			</h:inputText>
-			
-					
+
+
 			<h:outputLabel value="Frameworks: " />
 			<h:selectManyMenu id="campo-frameworks"
 				value="#{ pessoaBean.pessoa.frameworks }" style="height: 150px">
@@ -123,19 +124,33 @@
 				<h:commandButton value="Salvar" action="#{pessoaBean.salvar}"
 					title="Salvar" image="resources/img/Save_37110.png"
 					style="margin-right: 10px" />
-				<h:commandButton value="Novo" action="#{pessoaBean.novo}"
-					title="Novo" image="resources/img/new_add_user_16734.png"
-					style="margin-right: 10px" />
+
+				<h:commandButton id="botaoNovo" value="Novo"
+					action="#{pessoaBean.novo}" title="Novo"
+					image="resources/img/new_add_user_16734.png"
+					style="margin-right: 10px">
+					<f:ajax execute="botaoNovo" render="@form" />
+				</h:commandButton>
+
 				<h:commandButton value="Remover" action="#{pessoaBean.remover}"
 					title="Remover" image="resources/img/excluir.png"
 					rendered="#{pessoaBean.permiteAcesso('ADMINISTRADOR')}"
 					style="margin-right: 10px" />
-				<h:commandButton value="Limpar" type="reset" title="limpar"
-					image="resources/img/Clear_37294.png" style="margin-right: 10px" />
+
+				<h:commandButton id="botaoLimpar" value="Limpar" action="#{pessoaBean.limpar}"
+					title="limpar" image="resources/img/Clear_37294.png"
+					style="margin-right: 10px">
+					<f:ajax execute="botaoLimpar" render="@form" />
+
+				</h:commandButton>
 
 			</h:panelGroup>
 
 		</h:panelGrid>
+
+	</h:form>
+
+	<h:form id="formTable">
 
 		<h:dataTable value="#{pessoaBean.pessoas}" var="pessoa" border="2"
 			cellpadding="6">
