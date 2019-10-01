@@ -9,6 +9,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
+import javax.faces.event.AjaxBehaviorEvent;
 import javax.faces.view.facelets.FaceletContext;
 
 import br.com.dao.DaoGeneric;
@@ -94,6 +95,12 @@ public class PessoaBean {
 		FacesContext context = FacesContext.getCurrentInstance();
 		FacesMessage message = new FacesMessage(msg);
 		context.addMessage(null, message);
+	}
+	
+	public void pesquisaCep( AjaxBehaviorEvent event) {
+		
+		System.out.println("Método pesquisa cep sendo chamado: " + pessoa.getCep());
+		
 	}
 	
 
